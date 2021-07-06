@@ -5,4 +5,4 @@ from django.shortcuts import render
 
 
 def Hello_World(request):
-    return render((request, 'accountapp/hello_world.html'))
+    return render(request, 'accountapp/hello_world.html')
