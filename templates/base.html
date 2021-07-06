@@ -5,6 +5,14 @@
     <title>Title</title>
 </head>
 <body>
+    {% include 'header.html' %}
+    {% block content %}
+    {% endblock %}
+    {% include 'footer.html' %}
+
+    <div style="height: 10rem; background-color: aqua; margin: 2rem; border-radius: 1rem;">
+
+    </div>
 
 </body>
 </html>
