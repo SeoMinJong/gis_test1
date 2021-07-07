@@ -135,6 +135,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+STATICFILES_DIRS = [ # django에서 볼 수 있는 static의 위치를 알려주는 방법
+    BASE_DIR / "static"  # BASE_DIR(최상위 경로) / "static"
+]
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
