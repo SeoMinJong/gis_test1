@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 {% include 'head.html' %}
-<body>
-{% include 'header.html' %}
+    <body>
+        {% include 'header.html' %}
 
-<hr>
-{# hr 태그를 사용하면 선을 그을 수 있다. #}
-{% block content %}
-{% endblock %}
+        {# hr 태그를 사용하면 선을 그을 수 있다. #}
+        {% block content %}
+            {# block이라는 태그에 content라는 이름이 들어갔다고 생각하면 된다 block은 여러개가 들어갈 수 있지만 content라는 이름은 하나만 있어야한다. #}
 
-<hr>
+        {% endblock %}
 
-{% include 'footer.html' %}
-
-</body>
+        {% include 'footer.html' %}
+    </body>
 </html>
