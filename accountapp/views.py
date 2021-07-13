@@ -14,9 +14,14 @@ def Hello_World(request):
 
         model_instance = NewModel()  # 데이터베이스에 접근하기 위해 모델을 불러와 준다.
         model_instance.text = temp   # 데이터베이스에 만들어뒀던 text변수에 넘겨준다.
-        model_instance.save()        # 실제로 데이터베이스에 해당
+        model_instance.save()        # 실제로 데이터베이스에 저장해주는 것
 
-        return render(request, 'accountapp/hello_world.html', context={'model_instance': model_instance})
+        data_list = NewModel.objects.all() # NewModel이라는 데이터베이스에 있는 데이터들을 다 가져오는 법
+
+        return render(request, 'accountapp/hello_world.html', context={'data_list': data_list})
         # 받아온 텍스트를 넘겨줘서 출력할 수 있도록 한다.
+        # model_instance를 만들어서 넘겨준다.
     else:
-        return render(request, 'accountapp/hello_world.html', context={'text': 'GET METHOD!'})
+        data_list = NewModel.objects.all()  # NewModel이라는 데이터베이스에 있는 데이터들을 다 가져오는 법
+
+        return render(request, 'accountapp/hello_world.html', context={'data_list': data_list})
