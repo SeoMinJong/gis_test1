@@ -7,10 +7,11 @@
 
         <form action="/accounts/Hello_World/", method="post">
             {% csrf_token %}
+            <input type="text" name="input_text">
             <input class="btn btn-outline-dark rounded-pill px-5" type="submit">
         </form>  {# 주소 앞 뒤에 /를 잘 적어주지 않으면 정상적인 접근이 안된다. #}
 
-        <h3>{{ text }}</h3> {# 단순 변수를 출력하기 위해서 {{변수}}를 사용하게 해준다. #}
+        <h3>{{ model_instance.text }}</h3> {# 단순 변수를 출력하기 위해서 {{변수}}를 사용하게 해준다. #}
     </div>
 
     {% endblock %}
