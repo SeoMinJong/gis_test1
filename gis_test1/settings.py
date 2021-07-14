@@ -13,6 +13,7 @@ import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+from django.urls import reverse_lazy
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -119,7 +120,8 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ko-kr'
+# 장고는 다국어를 지원하기 때문에 이곳에서 언어를 바꾸면 장고내부의 로직들의 영어 표기를 한국어로 바꿀 수 있다.
 
 TIME_ZONE = 'UTC'
 
@@ -143,3 +145,7 @@ STATICFILES_DIRS = [ # django에서 볼 수 있는 static의 위치를 알려주
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGIN_REDIRECT_URL = reverse_lazy('accountapp:Hello_World')
+
+LOGOUT_REDIRECT_URL = reverse_lazy('accountapp:login')
