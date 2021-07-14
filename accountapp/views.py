@@ -38,4 +38,4 @@ class AccountCreateView(CreateView):
     model = User # User를 만드는 것
     form_class =UserCreationForm # User의 정보
     success_url = reverse_lazy('accountapp:Hello_World') # reverse_lazy = class에서 주소를 불러올 때 사용되는 함수
-    template_name = 'accountapp/create.html'
+    template_name = 'accountapp/create.html' # 불러와줄 html 파일을 가져와서 주소로 들어갔을 때 해당 페이지를 불러온다.
