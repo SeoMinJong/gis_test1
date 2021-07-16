@@ -6,7 +6,24 @@
     <div calss="pragmatic_header_button">
         <span>nav1</span>
         <span>nav2</span>
-        <span>nav3</span>
-        <span>nav4</span>
+        {% if not user.is_authenticated %} {# django에서 제공하는 user라는 객체는 로그인 여부를 확인할 수 있다. #}
+        <span>
+            <a href="{% url 'accountapp:login' %}">
+                Login
+            </a>
+{#            url = reverse와 같은 역활#}
+        </span>
+        <span>
+            <a href="{% url 'accountapp:create' %}">
+                SignUp
+            </a>
+        </span>
+        {% else %}
+                <span>
+                    <a href="{% url 'accountapp:logout' %}">
+                        Logout
+                    </a>
+                </span>
+        {% endif %}
     </div>
 </div>

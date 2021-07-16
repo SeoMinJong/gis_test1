@@ -147,5 +147,6 @@ STATICFILES_DIRS = [ # django에서 볼 수 있는 static의 위치를 알려주
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = reverse_lazy('accountapp:Hello_World')
+# LoginView가 실행되고 난 후에 경로
 
 LOGOUT_REDIRECT_URL = reverse_lazy('accountapp:login')
