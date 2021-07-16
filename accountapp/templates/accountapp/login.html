@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+
+{% block content %}
+
+    <div class="mw-500 m-auto">
+        <div class="m-5">
+            <h4>Login Up</h4>
+        </div>
+        <div class="m-5">
+            <form action="{% url 'accountapp:login' %}" method="post">
+{#          form은 요청을 보내주는 태그로써 어떤  #}
+                {% csrf_token %}
+{#               <fomr action =" {% url 요청을 보낼 경로 %}" method="전달받을 방식">           #}
+                {% bootstrap_form form %}
+                    <input type="submit"
+                           class="btn btn-outline-dark rounded-pill px-5">
+            </form>
+        </div>
+    </div>
+
+{% endblock %}
