@@ -13,6 +13,7 @@
 {#               <fomr action =" {% url 요청을 보낼 경로 %}" method="전달받을 방식">           #}
                 {% csrf_token %}
                 {% bootstrap_form form %} {# bootsrap4의 form으로 기존의 단순 form을 대체한다. #}
+{#                이렇게 Create와 같은 form을 사용해도 user의 date_joined는 갱신되지 않는다.#}
                     <input type="submit"
                            class="btn btn-outline-dark rounded-pill px-5">
             </form>

@@ -7,7 +7,7 @@ from django.shortcuts import render
 
 # request 안에 모든 전달 데이터가 들어있다.
 from django.urls import reverse, reverse_lazy
-from django.views.generic import CreateView, DetailView, UpdateView
+from django.views.generic import CreateView, DetailView, UpdateView, DeleteView
 
 from accountapp.models import NewModel
 
@@ -50,4 +50,10 @@ class AccountUpdateView(UpdateView):
     form_class = UserCreationForm # 새로운 값을 만들어 주는 역할
     context_object_name = 'target_user' # 만들어진 객체에 접근하기 위한 역할
     success_url = reverse_lazy('accountapp:Hello_World')
-    template_name = 'accountapp/Update.html'
+    template_name = 'accountapp/update.html'
+
+class AccountDeleteView(DeleteView):
+    model = User
+    context_object_name = 'target_user'
+    success_url = reverse_lazy('accountapp:Hello_World')
+    template_name = 'accountapp/delete.html'
