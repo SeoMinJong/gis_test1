@@ -7,7 +7,7 @@ from django.shortcuts import render
 
 # request 안에 모든 전달 데이터가 들어있다.
 from django.urls import reverse, reverse_lazy
-from django.views.generic import CreateView
+from django.views.generic import CreateView, DetailView
 
 from accountapp.models import NewModel
 
@@ -39,3 +39,8 @@ class AccountCreateView(CreateView):
     form_class =UserCreationForm # User의 정보
     success_url = reverse_lazy('accountapp:Hello_World') # reverse_lazy = class에서 주소를 불러올 때 사용되는 함수
     template_name = 'accountapp/create.html' # 불러와줄 html 파일을 가져와서 주소로 들어갔을 때 해당 페이지를 불러온다.
+
+class AccountDetailView(DetailView):
+    model = User
+    context_object_name = 'target_user'
+    template_name = 'accountapp/detail.html'
