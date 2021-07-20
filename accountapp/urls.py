@@ -1,7 +1,7 @@
 from django.contrib.auth.views import LoginView, LogoutView
 from django.urls import path
 
-from accountapp.views import Hello_World, AccountCreateView, AccountDetailView
+from accountapp.views import Hello_World, AccountCreateView, AccountDetailView, AccountUpdateView
 
 app_name = 'accountapp'
 
@@ -17,4 +17,6 @@ urlpatterns = [ # 어떤 패턴으로 라우팅을 해줄수 있는지를 입력
 
     path('detail/<int:pk>',AccountDetailView.as_view(), name='detail'),
     # DetailVeiw같은 경우 특정 user 객체의 Key값을 받아야 해당하는 객체의 detailView를 볼 수 있기 때문에 <int:tk>로 key를 넘겨준다. tk:Primarykey
+
+    path('Update/<int:pk>', AccountUpdateView.as_view(), name='update'),
 ]
