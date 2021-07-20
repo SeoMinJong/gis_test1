@@ -11,14 +11,16 @@
             {{ target_user.date_joined }}
 {#            date_joined 타겟의 가입 날짜 정보#}
         </div>
-        <div>
-            <a href="{% url 'accountapp:update' pk=target_user.pk %}">Update Info</a>
-{#            update를 사용하기 위해 본인의 정보를 볼 수 있는 detailView에 링크를 열어준다.#}
-        </div>
-        <div>
-            <a href="{% url 'accountapp:delete' pk=target_user.pk %}">Quit</a>
-{#            update를 사용하기 위해 본인의 정보를 볼 수 있는 detailView에 링크를 열어준다.#}
-        </div>
+        {% if user == target_user %}
+            <div>
+                <a href="{% url 'accountapp:update' pk=target_user.pk %}">Update Info</a>
+    {#            update를 사용하기 위해 본인의 정보를 볼 수 있는 detailView에 링크를 열어준다.#}
+            </div>
+            <div>
+                <a href="{% url 'accountapp:delete' pk=target_user.pk %}">Quit</a>
+    {#            update를 사용하기 위해 본인의 정보를 볼 수 있는 detailView에 링크를 열어준다.#}
+            </div>
+        {% endif %}
     </div>
 
 {% endblock %}
