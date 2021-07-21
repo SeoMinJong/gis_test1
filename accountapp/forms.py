@@ -5,4 +5,3 @@ class AccountCreateForm(UserCreationForm):
         super().__init__(*args, **kwargs) # 중요한 부분
 
         self.fields['username'].disabled=True
-
