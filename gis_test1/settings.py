@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'accountapp', # 새로운 app을 추가해서 사용하겠다.
     'bootstrap4', # bootstrap4를 사용해 줌
+    'profileapp',
 ]
 
 MIDDLEWARE = [

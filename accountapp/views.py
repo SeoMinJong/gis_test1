@@ -27,11 +27,6 @@ def Hello_World(request):
         model_instance.text = temp  # 데이터베이스에 만들어뒀던 text변수에 넘겨준다.
         model_instance.save()  # 실제로 데이터베이스에 저장해주는 것
 
-        # data_list = NewModel.objects.all() # NewModel이라는 데이터베이스에 있는 데이터들을 다 가져오는 법
-        #
-        # return render(request, 'accountapp/hello_world.html', context={'data_list': data_list})
-        # # 받아온 텍스트를 넘겨줘서 출력할 수 있도록 한다.
-        # # model_instance를 만들어서 넘겨준다.
         return HttpResponseRedirect(reverse('accountapp:Hello_World'))
         # 해당하는 app안에 있는 app_name으로 app의 위치를 알려주고 그 안에 있는 라우팅을 가져온다.
         # 다만 이때 HttpResponseRedirect 안에 인자는 주소가 들어가야 하기 때문에 reverse로 주소를 불러온다.
