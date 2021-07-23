@@ -137,10 +137,20 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+# STATIC구문을 사용했을 때 앞에 주소로 붙여질 URL
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+# os = 운영체제관련 path = 경로 join = 합친다. 최상위 경로(BASE_DIR)와 staticfiles의 폴더의 경로를 합친다는 의미
 
 STATICFILES_DIRS = [ # django에서 볼 수 있는 static의 위치를 알려주는 방법
     BASE_DIR / "static"  # BASE_DIR(최상위 경로) / "static"
 ]
+
+
+MEDIA_URL_URL = '/media/'
+# MEDIA 구문을 사용했을 때 앞에 주소가 되어줄 URL
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
