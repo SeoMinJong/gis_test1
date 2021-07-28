@@ -12,7 +12,9 @@
                 {# 이미지를 바로 가져올 수 있는게 아니라 이미지의 url을 가져와야 한다. #}
                 <h2 class="NNS_B">
                     {{ target_user.profile.nickname }}
+                    {% if target_user == user %}
                     <a href="{% url 'profileapp:update' pk=target_user.profile.pk %}">edit</a>
+                    {% endif %}
                 </h2>
                 <h5>{{ target_user.profile.message }}</h5>
             {% else %}
