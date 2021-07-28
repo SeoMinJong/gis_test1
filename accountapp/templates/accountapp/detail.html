@@ -6,12 +6,16 @@
     {# m-auto는 bootstrap에서 제공해주는 class이다. #}
         <div class="m-5">
             {% if target_user.profile %}
-                <h4>{{ target_user.profile.nickname }}</h4>
+                <img src="{{ target_user.profile.image.url }}"
+                     class="profile_image m-4"
+                    art="profile image">
+                {# 이미지를 바로 가져올 수 있는게 아니라 이미지의 url을 가져와야 한다. #}
+                <h2 class="NNS_B">{{ target_user.profile.nickname }}</h2>
                 <h5>{{ target_user.profile.message }}</h5>
             {% else %}
-                <h4>
-                    <a href="{% url 'profileapp:create' %}"></a>
-                </h4>
+                <h2>
+                    <a href="{% url 'profileapp:create' %}">Create Profile</a>
+                </h2>
             {% endif %}
         </div>
         <div>

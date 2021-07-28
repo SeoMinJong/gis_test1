@@ -148,7 +148,7 @@ STATICFILES_DIRS = [ # django에서 볼 수 있는 static의 위치를 알려주
 ]
 
 
-MEDIA_URL_URL = '/media/'
+MEDIA_URL = '/media/'
 # MEDIA 구문을 사용했을 때 앞에 주소가 되어줄 URL
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
