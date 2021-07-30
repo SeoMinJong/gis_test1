@@ -13,7 +13,10 @@
                 <h2 class="NNS_B">
                     {{ target_user.profile.nickname }}
                     {% if target_user == user %}
-                    <a href="{% url 'profileapp:update' pk=target_user.profile.pk %}">edit</a>
+                    <a href="{% url 'profileapp:update' pk=target_user.profile.pk %}"
+                    class = "material-icons round_button">
+                        edit
+                    </a>
                     {% endif %}
                 </h2>
                 <h5>{{ target_user.profile.message }}</h5>
@@ -23,17 +26,17 @@
                 </h2>
             {% endif %}
         </div>
-        <div>
-            {{ target_user.date_joined }}
-{#            date_joined 타겟의 가입 날짜 정보#}
-        </div>
         {% if user == target_user %}
             <div>
-                <a href="{% url 'accountapp:update' pk=target_user.pk %}">Update Info</a>
+                <a href="{% url 'accountapp:update' pk=target_user.pk %}"
+                    class="material-icons mx-1 round_button">
+                    settings
+                </a>
     {#            update를 사용하기 위해 본인의 정보를 볼 수 있는 detailView에 링크를 열어준다.#}
-            </div>
-            <div>
-                <a href="{% url 'accountapp:delete' pk=target_user.pk %}">Quit</a>
+                <a href="{% url 'accountapp:delete' pk=target_user.pk %}"
+                    class="material-icons mx-1 round_button">
+                    close
+                </a>
     {#            update를 사용하기 위해 본인의 정보를 볼 수 있는 detailView에 링크를 열어준다.#}
             </div>
         {% endif %}
