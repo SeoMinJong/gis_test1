@@ -58,11 +58,11 @@ class AccountUpdateView(UpdateView):
     model = User
     form_class = AccountCreateForm  # 새로운 값을 만들어 주는 역할
     context_object_name = 'target_user'  # 만들어진 객체에 접근하기 위한 역할
-    success_url = reverse_lazy('accountapp:Hello_World')
+    # success_url = reverse_lazy('accountapp:Hello_World')
     template_name = 'accountapp/update.html'
 
     def get_success_url(self):
-        return reverse('accountapp:detail', kwargs={self.object.pk})
+        return reverse('accountapp:detail', kwargs={'pk' : self.object.pk})
 
 
 @method_decorator(has_ownership, 'get')
