@@ -282,4 +282,12 @@ let magicGrid = new MagicGrid({
   useMin: true
 });
 
+var masonrys = document.getElementsByTagName("img") //documnet : html문서를 뜻한다. 그 문서안에 이미지 태그를 찾아 오는 것
+
+for (let i=0; masonrys.length; i++){
+  masonrys[i].addEventListener('load',function (){  // masonrys는 해당 문서의 이미지들이기 때문에 for문을 사용해서 모든 이미지 태그중에
+    magicGrid.positionItems();
+  }, false) // topdown True
+}
+
 magicGrid.listen();
