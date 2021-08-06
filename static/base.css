@@ -57,3 +57,7 @@
     width: 60%;
     box-shadow: 0 0 1rem black;
 }
+
+.article_list_img{
+    border-radius: 0rem;
+}
