@@ -5,10 +5,12 @@ from django.shortcuts import render
 from django.urls import reverse_lazy, reverse
 from django.utils.decorators import method_decorator
 from django.views.generic import CreateView, DetailView, UpdateView, DeleteView, ListView
+from django.views.generic.edit import FormMixin
 
 from articleapp.decorators import article_ownership_required
 from articleapp.forms import ArticleCreateForm
 from articleapp.models import Article
+from commentapp.forms import CommentCreationForm
 
 
 @method_decorator(login_required, 'post')
@@ -27,8 +29,9 @@ class ArticleCreateView(CreateView):
     # 해당 구문은 form_valid라는 함수(view에 정보를 넘겨주기 전에 마지막으로 거치는 과정)에 직접 writer 정보를 넘겨주는 것
 
 
-class ArticleDetailView(DetailView):
+class ArticleDetailView(DetailView, FormMixin):
     model = Article
+    form_class = CommentCreationForm
     context_object_name = 'target_article'
     template_name = 'articleapp/detail.html'
 
