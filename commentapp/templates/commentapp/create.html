@@ -3,12 +3,19 @@
 <div class="text-center mw-500 m-auto">
 {# m-auto는 bootstrap에서 제공해주는 class이다. #}
     <div class="m-5">
-        <h4>Create comment</h4>
+        <h4>Create Comment</h4>
     </div>
     <div class="m-5">
         <form action="{% url 'commentapp:create' %}" method="post">
 {#               <fomr action =" {% url 요청을 보낼 경로 %}" method="전달받을 방식">           #}
             {% csrf_token %}
+
+            <input type="hidden"
+                   name="article_pk"
+                   value="{{ target_article.pk }}">
+{#                 지금 이 html은 comment에 있지만 실질적으로는 articleapp/detail.html에 include되어 있기 때문에 target_article을 사용해줄 수 있다.  #}
+{#                 또한 사용자가 직접 pk를 지정하지 않기 때문에 이 #}
+
             {% bootstrap_form form %} {# bootsrap4의 form으로 기존의 단순 form을 대체한다. #}
                 <input type="submit"
                        class="btn btn-outline-dark rounded-pill px-5">

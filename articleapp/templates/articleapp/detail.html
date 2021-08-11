@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div  class="container text-center">
+    <div class="container text-center">
         <div class="my-5">
             {#    게시글 제목, 글쓴이, 작성일자    #}
             <h1 class="NNS_B">{{ target_article.title }}</h1>
@@ -15,7 +15,7 @@
         {#    게시글 대표이미지, 글 내용    #}
             <img src="{{ target_article.image.url }}"
                  class="article_img"
-                 alt="">
+                 alt=""> {# alt 이미지를 가져오지 못했을 때 대체 텍스트로 표현해주는 문구 #}
             <div class="my-5 article_content">{{ target_article.content }}</div>
             {% if target_article.writer == request.user %}
             <div>
@@ -38,6 +38,5 @@
             {% include 'commentapp/create.html' %}
         </div>
     </div>
-
 
 {% endblock %}
