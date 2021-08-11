@@ -61,3 +61,11 @@
 .article_list_img{
     border-radius: 0rem;
 }
+
+.comment_box{
+    text-align: left;
+    border: solid darkgrey;
+    border-radius: 1rem;
+    padding: 1rem;
+    margin: 1rem;
+}

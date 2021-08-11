@@ -10,4 +10,5 @@ def comment_ownership_required(func):
             return decorated(request, *args, **kwargs)
         else:
             return HttpResponseForbidden()
+
     return decorated
