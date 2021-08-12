@@ -42,7 +42,8 @@
                     <div>
                         <span class="NNS_B"
                         style="font-size: 1.3rem">
-                            {{ comment.writer.profile.nickname }}</span>
+                            {{ comment.writer.profile.nickname }}
+                        </span>
                         <span>{{ comment.created_at }}</span>
                     </div>
                     <div>
@@ -59,7 +60,6 @@
                         </div>
                     {% endif %}
                 </div>
-
             {% endfor %}
 
             {% include 'commentapp/create.html' %}
