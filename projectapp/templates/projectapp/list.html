@@ -11,19 +11,19 @@
         }
 
         .container div {
-            width: 45%;
-            max-width: 250px;
             display: flex;
             justify-content: center;
             align-items: center;
             border-radius: 1rem;
             flex-direction: column;  {# flex 타입의 display의 아래에 올수 있는 코드 #}
-            box-shadow: 0 0 1rem silver;
         }
 
         .container img{
-            width: 100%;
+            width: 7rem;
+            height: 7rem;
             border-radius: 1rem;
+            object-fit: cover;
+        {#  object-fit:cover : 사진을 크기에 맞춰서 조절하여 사진의 비율을 맞춰준다.  #}
         }
 
     </style>
@@ -35,7 +35,8 @@
                     <img src="{{ project.image.url }}"
                          alt="">
                 </a>
-                <span class="NNS_B my-2">{{ project.name }}</span>
+                <span class="NNS_B my-2">{{ project.name | truncatechars:10 }}</span>
+                                                        {# truncatechars : 글자를 제한해줄 수 있는 장고 제공 필터 #}
             </div>
         {% endfor %}
     </div>
