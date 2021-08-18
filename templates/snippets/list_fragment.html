@@ -1,0 +1,52 @@
+{% load static %}
+{# statci을 사용하는 html에서 사용할 때는 load를 사용해서 불러와줘야 한다. #}
+<style>
+    .container{
+        padding: 0;
+        margin: 0 auto;
+    }
+
+    .container div {
+        width: 45%;
+        max-width: 250px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 1rem;
+        flex-direction: column;  {# flex 타입의 display의 아래에 올수 있는 코드 #}
+        box-shadow: 0 0 1rem silver;
+    }
+
+    .container img{
+        width: 100%;
+        border-radius: 1rem;
+    }
+
+</style>
+
+<div class="container my-4">
+    {% for article in article_list %}
+        <div>
+            <a href="{% url 'articleapp:detail' pk=article.pk %}">
+                <img src="{{ article.image.url }}"
+                     alt="">
+            </a>
+            <span class="NNS_B my-2">{{ article.title }}</span>
+        </div>
+    {% endfor %}
+</div>
+
+<script src="{% static 'js/magicgrid.js' %}"></script>
+
+{% include 'snippets/pagination.html' %}
+
+<div class="text-center my-5">
+    <a href="{% url 'articleapp:create' %}"
+        class="btn btn-dark rounded-pill material-icons">
+        brush
+    </a>
+    <a href="{% url 'articleapp:create' %}"
+        class="btn btn-outline-dark rounded-pill px-5">
+        Create Article
+    </a>
+</div>
