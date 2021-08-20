@@ -10,7 +10,7 @@ from projectapp.models import Project
 from subscribeapp.models import Subscription
 
 
-@method_decorator(login_required,'get')
+@method_decorator(login_required, 'get')
 class SubscriptionView(RedirectView):
 
     def get(self, request, *args, **kwargs):
@@ -19,12 +19,12 @@ class SubscriptionView(RedirectView):
 
         subscription = Subscription.objects.filter(user=user,
                                                    project=project)
+
         if subscription.exists():
             subscription.delete()
         else:
             Subscription(user=user, project=project).save()
-
         return super().get(request, *args, **kwargs)
 
     def get_redirect_url(self, *args, **kwargs):
-        return reverse('projectapp:detail', kwargs={'pk':kwargs['project_pk']})
+        return reverse('projectapp:detail', kwargs={'pk': kwargs['project_pk']})
