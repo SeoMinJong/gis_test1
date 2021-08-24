@@ -71,6 +71,16 @@
     margin: 1rem;
 }
 
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+        text-decoration: none;
+    color: black;
+}
+
 @media screen and (max-width: 500px){
     html{
         /* default font-size 14 px*/
