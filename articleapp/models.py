@@ -18,3 +18,5 @@ class Article(models.Model):
 
     created_at = models.DateField(auto_now_add=True, null=True)
     # db에서 데이터가 생성될 때 자동적으로 생성이 될 수 있게 해주는 방법 auto_now_add=True
+
+    like = models.IntegerField(default=0)
