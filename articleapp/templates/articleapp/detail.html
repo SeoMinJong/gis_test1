@@ -27,7 +27,7 @@
             <img src="{{ target_article.image.url }}"
                  class="article_img"
                  alt=""> {# alt 이미지를 가져오지 못했을 때 대체 텍스트로 표현해주는 문구 #}
-            <div class="my-5 article_content">{{ target_article.content }}</div>
+            <div class="my-5 article_content">{{ target_article.content | safe }}</div>
             {% if target_article.writer == request.user %}
             <div>
                 <a href="{% url 'articleapp:update' pk=target_article.pk %}"
