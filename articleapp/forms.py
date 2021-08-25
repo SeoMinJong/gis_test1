@@ -6,8 +6,8 @@ from articleapp.models import Article
 
 class ArticleCreateForm(ModelForm):
     content = forms.CharField(widget=forms.Textarea(attrs={'class': 'editable',
-                                                           'style':'text-align: left;'
-                                                                   'min-height: 10rem;'}))
+                                                           'style': 'text-align: left;'
+                                                                    'min-height: 10rem;'}))
 
     class Meta:
         model = Article
