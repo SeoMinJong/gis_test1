@@ -168,7 +168,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGIN_REDIRECT_URL = reverse_lazy('accountapp:Hello_World')
+LOGIN_REDIRECT_URL = reverse_lazy('articleapp:list')
 # LoginView가 실행되고 난 후에 경로
 
 LOGOUT_REDIRECT_URL = reverse_lazy('accountapp:login')
