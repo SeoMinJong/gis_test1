@@ -12,7 +12,7 @@ class Article(models.Model):
     project = models.ForeignKey(Project, on_delete=models.SET_NULL,
                                 related_name='article', null=True)
     title = models.CharField(max_length=100, null=True)
-    image = models.ImageField(upload_to='article/', null=True)
+    image = models.ImageField(upload_to='article/', null=True, blank=True)
     content = models.TextField(null=True)
     # 장문을 고려해야하는 상황에는 TextField를 사용해주는 편이다.
 
