@@ -1,7 +1,30 @@
 version: "3.7"
 
 services:
+  nginx:
+    image: nginx:1.95.5
+    ports:
+      -80:80
+    networks:
+      - gis_test1
+    volumes:
+      - /home/ubuntu/nginx.conf: /etc/nginx/nginx.conf
+      - gis_test1_static: /data/static/
+      - gis_test1_media: /data/media/
+
+
+
   django:
     image: gis_test_1:1
-    ports:
-      - 8080:8000
+    networks:
+      - gis_test1
+    volumes:
+      - gis_test1_static: /home/gis_test1/staticfiles
+      - gis_test1_static: /home/gis_test1/meida
+
+networks:
+  gis_test1:
+
+volumes:
+  gis_test1_static:
+  gis_test1_media:
