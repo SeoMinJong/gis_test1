@@ -18,7 +18,9 @@ services:
       - gis_test1
     volumes:
       - gis_test1_static:/home/gis_test1/staticfiles/
-      - gis_test1_static:/home/gis_test1/meida/
+      - gis_test1_media:/home/gis_test1/media/
+    secrets:
+      - DJANGO_SECRET_KEY
 
   mariadb:
     image: mariadb:10.5
@@ -39,3 +41,7 @@ volumes:
   gis_test1_static:
   gis_test1_media:
   gis_test1_mariadb:
+
+secrets:
+  DJANGO_SECRET_KEY:
+    external: true
