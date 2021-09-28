@@ -13,7 +13,7 @@ services:
       - gis_test1_media:/data/media/
 
   django:
-    image: gis_test1:4
+    image: gis_test1:5
     networks:
       - gis_test1
     volumes:
