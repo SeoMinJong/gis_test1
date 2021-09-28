@@ -2,7 +2,7 @@ FROM python:3.9.0
 
 WORKDIR /home/
 
-RUN echo "asbsdb"
+RUN echo "ashweh"
 
 RUN git clone https://github.com/SeoMinJong/gis_test1.git
 
