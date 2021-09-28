@@ -26,6 +26,6 @@ DATABASES = {
         'USER': read_secret('MARIADB_USER'),
         'PASSWORD': read_secret('MARIADB_PASSWORD'),
         'HOST': 'mariadb',
-        'PORT': '5432',
+        'PORT': '3306',
     }
 }
